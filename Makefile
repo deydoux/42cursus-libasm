@@ -6,6 +6,7 @@ SRC_DIR = src
 TEST_DIR = test
 
 SRCS = \
+	ft_strcpy.s \
 	ft_strlen.s
 
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.s=.o))
