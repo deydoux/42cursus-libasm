@@ -13,20 +13,14 @@ ft_strcmp:
 	inc rdi ; rdi++
 	inc rsi ; rsi++
 .start_loop:
-	mov bl, byte [rsi] ; bl = *rsi
-	cmp byte [rdi], bl
-	je .check_end ; if (*rdi == bl) goto .check_end
-	; Characters differ
-	mov rax, 1 ; al = 1
-	jg .end ; if (*rdi > bl) goto .end
-	; else
+	mov al, byte [rsi] ; al = *rsi
+	sub al, byte [rdi] ; al -= *rdi
 	neg rax ; rax *= -1
-	jmp .end ; goto .end
+	test al, al
+	jnz .end ; if (bl != 0) goto .end
 
-; Check if '\0' reached
-.check_end:
-	test bl, bl
-	jnz .loop ; if (bl != 0) goto .loop
+	cmp byte [rdi], 0
+	je .loop ; if (*rdi == 0) goto .loop
 
 .end:
 	ret
