@@ -2,12 +2,10 @@
 #include "libasm.h"
 #include <string.h>
 
-void test_strlen(const char *s)
+static void test_strlen(const char *s)
 {
-	printf("\n");
-
 	size_t len = strlen(s);
-	printf("   strlen(\"%s\") = %zu\n", s, len);
+	printf("\n   strlen(\"%s\") = %zu\n", s, len);
 
 	size_t ft_len = ft_strlen(s);
 	printf("ft_strlen(\"%s\") = %zu\n", s, ft_len);
@@ -15,16 +13,14 @@ void test_strlen(const char *s)
 	assert(len == ft_len);
 }
 
-void test_strlen_signal(const char *s, const char *name)
+static void test_strlen_signal(const char *s, const char *name)
 {
-	printf("\n");
-
 	int retsig;
 
 	size_t len;
 	get_signal(len = strlen(s));
 	int sig = retsig;
-	printf("   strlen(%s) -> SIG%s\n", name, sigabbrev_np(sig));
+	printf("\n   strlen(%s) -> SIG%s\n", name, sigabbrev_np(sig));
 
 	size_t ft_len;
 	get_signal(ft_len = ft_strlen(s));
