@@ -14,9 +14,9 @@ ft_strcpy:
 .loop:
 	inc rdi ; rdi++
 	inc rsi ; rsi++
-	mov al, byte [rsi] ; al = *rsi
-	mov byte [rdi], al ; *rdi = al
-	test al, al ; if (al != 0)
+	mov dl, byte [rsi] ; dl = *rsi
+	mov byte [rdi], dl ; *rdi = dl
+	test dl, dl ; if (dl != 0)
 	jnz .loop ; goto .loop
 
 .end:
