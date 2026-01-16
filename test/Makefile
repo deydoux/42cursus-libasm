@@ -8,6 +8,7 @@ OBJ_DIR = .obj
 SRC_DIR = src
 
 TEST_NAMES = \
+	strcpy \
 	strlen
 
 TESTS = $(addprefix test_,$(TEST_NAMES))
@@ -47,4 +48,4 @@ re: fclean all
 
 FORCE:
 
-.PHONY: all run clean fclean re FORCE
+.PHONY: all run run_% clean fclean re FORCE
