@@ -6,10 +6,11 @@ ft_strlen:
 	; (const char *s)rdi
 
 	mov rax, rdi ; rax = rdi
-	dec rax ; rax--
+	jmp .start_loop ; goto .start_loop
 
 .loop:
 	inc rax ; rax++
+.start_loop:
 	cmp byte [rax], 0 ; if (*rax != 0)
 	jne .loop ; goto .loop
 
