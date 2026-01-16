@@ -14,7 +14,7 @@ TESTS = $(addprefix test_,$(TEST_NAMES))
 DEPS = $(addprefix $(OBJ_DIR)/,$(addsuffix .d,$(TEST_NAMES)))
 
 CC = cc
-CFLAGS = $(addprefix -I,$(INC_DIRS)) -Wall -Wextra -Werror -MD -MF $(OBJ_DIR)/$*.d
+CFLAGS = $(addprefix -I,$(INC_DIRS)) -Wall -Wextra -Werror -g -MD -MF $(OBJ_DIR)/$*.d
 LFLAGS = -L$(LIBASM_DIR) -l$(LIBASM)
 MKDIR = mkdir -p
 RM = rm -rf
@@ -23,10 +23,10 @@ all: $(TESTS)
 
 -include $(DEPS)
 
-run: $(TESTS)
-	@for test in $^ ; do \
-		./$$test ; \
-	done
+run: $(addprefix run_,$(TEST_NAMES))
+
+run_%: test_%
+	./$<
 
 test_%: $(SRC_DIR)/%.c $(LIBASM_PATH) | $(OBJ_DIR)
 	$(CC) $(CFLAGS) -o $@ $< $(LFLAGS)
