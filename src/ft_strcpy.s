@@ -15,8 +15,7 @@ ft_strcpy:
 .start_loop:
 	mov dl, byte [rsi] ; dl = *rsi
 	mov byte [rdi], dl ; *rdi = dl
-	test dl, dl ; if (dl != 0)
-	jnz .loop ; goto .loop
+	test dl, dl
+	jnz .loop ; if (dl != 0) goto .loop
 
-.end:
 	ret ; return rax

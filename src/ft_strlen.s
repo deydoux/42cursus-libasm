@@ -11,8 +11,8 @@ ft_strlen:
 .loop:
 	inc rax ; rax++
 .start_loop:
-	cmp byte [rax], 0 ; if (*rax != 0)
-	jne .loop ; goto .loop
+	cmp byte [rax], 0
+	jne .loop ; if (*rax != 0) goto .loop
 
 	sub rax, rdi ; rax -= rdi
 	ret ; return rax
