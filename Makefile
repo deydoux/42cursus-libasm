@@ -6,6 +6,7 @@ SRC_DIR = src
 TEST_DIR = test
 
 SRCS = \
+	ft_strcmp.s \
 	ft_strcpy.s \
 	ft_strlen.s
 
