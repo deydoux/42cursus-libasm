@@ -10,8 +10,8 @@ ft_strlen:
 
 .loop:
 	inc rax ; rax++
-	cmp byte [rax], 0 ; *rax != 0
-	jne .loop
+	cmp byte [rax], 0 ; if (*rax != 0)
+	jne .loop ; goto .loop
 
 	sub rax, rdi ; rax -= rdi
 	ret ; return rax

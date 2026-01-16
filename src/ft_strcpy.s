@@ -16,8 +16,8 @@ ft_strcpy:
 	inc rsi ; rsi++
 	mov al, byte [rsi] ; al = *rsi
 	mov byte [rdi], al ; *rdi = al
-	test al, al ; al != 0
-	jnz .loop
+	test al, al ; if (al != 0)
+	jnz .loop ; goto .loop
 
 .end:
 	ret ; return rax
