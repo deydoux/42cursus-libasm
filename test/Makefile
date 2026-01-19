@@ -10,7 +10,8 @@ SRC_DIR = src
 TEST_NAMES = \
 	strcmp \
 	strcpy \
-	strlen
+	strlen \
+	write
 
 TESTS = $(addprefix test_,$(TEST_NAMES))
 DEPS = $(addprefix $(OBJ_DIR)/,$(addsuffix .d,$(TEST_NAMES)))
