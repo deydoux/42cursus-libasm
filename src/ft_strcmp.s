@@ -24,4 +24,4 @@ ft_strcmp:
 
 .end:
 	movsx eax, al ; eax = (int)al
-	ret
+	ret ; return rax
