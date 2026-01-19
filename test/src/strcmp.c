@@ -55,6 +55,7 @@ int main(int argc, char **argv)
 	}
 
 	test_strcmp("Hello, World!", "Hello, World!");
+	test_strcmp("Hello World!", "Hello, World?");
 	test_strcmp("The Answer", "42");
 	test_strcmp("Non-empty", "");
 	{
