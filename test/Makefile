@@ -8,6 +8,7 @@ OBJ_DIR = .obj
 SRC_DIR = src
 
 TEST_NAMES = \
+	strcmp \
 	strcpy \
 	strlen
 
