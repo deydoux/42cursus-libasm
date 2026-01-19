@@ -8,7 +8,8 @@ TEST_DIR = test
 SRCS = \
 	ft_strcmp.s \
 	ft_strcpy.s \
-	ft_strlen.s
+	ft_strlen.s \
+	ft_write.s
 
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.s=.o))
 
