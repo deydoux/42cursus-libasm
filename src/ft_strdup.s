@@ -23,4 +23,4 @@ ft_strdup:
 	call ft_strcpy ; rax = ft_strcpy(rdi, rsi)
 
 .end:
-	ret
+	ret ; return rax
