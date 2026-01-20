@@ -11,6 +11,7 @@ TEST_NAMES = \
 	read \
 	strcmp \
 	strcpy \
+	strdup \
 	strlen \
 	write
 
