@@ -14,7 +14,6 @@ char buf[65536];
 ssize_t get_eagain(write_fn_t write_fn)
 {
 	int pipefd[2];
-
 	pipe(pipefd);
 	fcntl(pipefd[1], F_SETFL, O_NONBLOCK);
 
@@ -25,7 +24,6 @@ ssize_t get_eagain(write_fn_t write_fn)
 
 	close(pipefd[0]);
 	close(pipefd[1]);
-
 	return ret;
 }
 
@@ -57,8 +55,7 @@ ssize_t get_eintr(write_fn_t write_fn)
 	int pipefd[2];
 	pipe(pipefd);
 
-	pid_t pid = fork();
-	if (pid == 0) {
+	if (fork() == 0) {
 		kill(getppid(), SIGUSR1);
 		exit(0);
 	}
@@ -70,9 +67,7 @@ ssize_t get_eintr(write_fn_t write_fn)
 
 	close(pipefd[0]);
 	close(pipefd[1]);
-
 	sigaction(SIGUSR1, &old_act, NULL);
-
 	return ret;
 }
 
@@ -80,8 +75,8 @@ ssize_t get_enospc(write_fn_t write_fn)
 {
 	int fd = open("/dev/full", O_WRONLY);
 	ssize_t ret = write_fn(fd, buf, sizeof(buf));
-	close(fd);
 
+	close(fd);
 	return ret;
 }
 
@@ -100,15 +95,13 @@ ssize_t get_epipe(write_fn_t write_fn)
 	ssize_t ret = write_fn(pipefd[1], buf, sizeof(buf));
 
 	close(pipefd[1]);
-
 	sigaction(SIGPIPE, &old_act, NULL);
-
 	return ret;
 }
 
 void test_write_errno(test_write_fn_t test_write_fn, const char *name)
 {
-	printf(BBLK "\n--- Testing write for %s ---" RESET "\n", name);
+	printf(BBLK "\n--- Check %s ---" RESET "\n", name);
 
 	errno = 0;
 	ssize_t ret = test_write_fn(write);
@@ -130,7 +123,7 @@ int main(void)
 	printf(BBLK BLKB "=== Testing ft_write ===" RESET "\n");
 
 	ssize_t bytes = ft_write(1, "Hello, World!\n", 14);
-	printf("ft_write wrote %zd bytes\n", bytes);
+	printf("ft_write(1, \"Hello, World!\\n\", 14) = %zd\n", bytes);
 
 	test_write_errno(get_eagain, "EAGAIN");
 	test_write_errno(get_ebadf, "EBADF");
