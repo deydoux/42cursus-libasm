@@ -7,12 +7,12 @@ ft_strcpy:
 	; (const char *dest)rsi
 
 	mov rax, rdi ; rax = rdi
-	jmp .start_loop ; goto .start_loop
+	jmp .init_loop ; goto .init_loop
 
 .loop:
 	inc rdi ; rdi++
 	inc rsi ; rsi++
-.start_loop:
+.init_loop:
 	mov dl, byte [rsi] ; dl = *rsi
 	mov byte [rdi], dl ; *rdi = dl
 	test dl, dl

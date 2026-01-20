@@ -6,12 +6,12 @@ ft_strcmp:
 	; (const char *s1)rdi
 	; (const char *s1)rsi
 
-	jmp .start_loop ; goto .start_loop
+	jmp .init_loop ; goto .init_loop
 
 .loop:
 	inc rdi ; rdi++
 	inc rsi ; rsi++
-.start_loop:
+.init_loop:
 	mov al, byte [rdi] ; al = *rdi
 	mov bl, byte [rsi] ; bl = *rsi
 	sub al, bl ; eax -= ebx
