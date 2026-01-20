@@ -1,6 +1,5 @@
 #include "assert.h"
 #include "libasm.h"
-#include <string.h>
 
 static void test_strlen(const char *s)
 {

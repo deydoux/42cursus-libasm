@@ -1,10 +1,8 @@
-#define _GNU_SOURCE
+#include "assert.h"
+#include "libasm.h"
 #include <errno.h>
 #include <fcntl.h>
 #include <signal.h>
-#include <string.h>
-#include "assert.h"
-#include "libasm.h"
 
 typedef ssize_t (*read_fn_t)(int, void *, size_t);
 typedef ssize_t (*test_read_fn_t)(read_fn_t);

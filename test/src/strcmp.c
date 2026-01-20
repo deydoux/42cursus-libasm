@@ -1,6 +1,5 @@
 #include "assert.h"
 #include "libasm.h"
-#include <string.h>
 
 static void test_strcmp(const char *s1, const char *s2)
 {

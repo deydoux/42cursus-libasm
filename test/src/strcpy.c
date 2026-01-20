@@ -1,6 +1,5 @@
 #include "assert.h"
 #include "libasm.h"
-#include <string.h>
 
 static void test_strcpy(const char *dest, const char *src)
 {
