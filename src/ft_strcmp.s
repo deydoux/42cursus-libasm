@@ -20,7 +20,7 @@ ft_strcmp:
 	jnz .end ; if (al != 0) goto .end
 
 	cmp byte [rdi], 0
-	jne .loop ; if (*rdi == 0) goto .loop
+	jne .loop ; if (*rdi != 0) goto .loop
 
 .end:
 	movsx eax, al ; eax = (int)al
