@@ -6,6 +6,7 @@ SRC_DIR = src
 TEST_DIR = test
 
 SRCS = \
+	ft_atoi_base_bonus.s \
 	ft_read.s \
 	ft_strcmp.s \
 	ft_strcpy.s \
@@ -18,11 +19,11 @@ OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.s=.o))
 AR = ar
 ARFLAGS = -c -r -s
 ASMC = nasm
-ASMCFLAGS = -f elf64
+ASMCFLAGS = -f elf64 -g -F dwarf
 RM = rm -rf
 MKDIR = mkdir -p
 
-all: $(NAME) test
+all bonus: $(NAME) test
 
 run:
 	$(MAKE) -C $(TEST_DIR) $@
@@ -49,4 +50,4 @@ fclean:
 
 re: fclean all
 
-.PHONY: all test clean fclean re
+.PHONY: all bonus test clean fclean re
