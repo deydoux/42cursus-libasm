@@ -10,7 +10,7 @@ ft_read:
 	; (size_t count)rdx
 
 	mov eax, 0 ; eax = 0 // read system call number
-	syscall ; write(edi, rsi, rdx)
+	syscall ; read(edi, rsi, rdx)
 
 	cmp rax, 0
 	jge .end ; if (rax >= 0) goto .end
