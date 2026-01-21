@@ -8,6 +8,7 @@ OBJ_DIR = .obj
 SRC_DIR = src
 
 TEST_NAMES = \
+	atoi_base \
 	read \
 	strcmp \
 	strcpy \
