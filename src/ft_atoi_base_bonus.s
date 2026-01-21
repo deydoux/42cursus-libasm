@@ -108,7 +108,7 @@ ft_atoi_base:
 	jnz .skip_space_loop ; if (al != 0) goto .skip_space_loop
 
 	xor r9, r9 ; r9 = 0 // n
-	mov r11b, 1 ; r11b = 1 // sign
+	mov r11, 1 ; r11 = 1 // sign
 
 ; .check_sign:
 	cmp byte [r8], 43
@@ -117,7 +117,7 @@ ft_atoi_base:
 	cmp byte [r8], 45
 	jne .init_loop ; if (*r8 != '-') goto .init_loop
 
-	mov r11b, -1 ; r11b = -1
+	mov r11, -1 ; r11 = -1
 
 .loop:
 	inc r8 ; r8++
@@ -142,13 +142,13 @@ ft_atoi_base:
 
 .end:
 	mov eax, r9d ; eax = r9d
-	mul r11b ; eax *= r11b
+	mul r11 ; eax *= r11
 	ret ; return eax
 
 .error:
 	xor eax, eax ; eax = 0
-	cmp r11b, 1
-	sete al ; al = r11b == 1
+	cmp r11, 1
+	sete al ; al = r11 == 1
 	neg eax ; eax *= -1
 	ret ; return eax
 
