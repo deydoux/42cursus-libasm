@@ -25,4 +25,4 @@ ft_list_push_front:
 	mov [rdi], rax ; *rdi = rax
 
 .end:
-	ret
+	ret ; return
