@@ -5,7 +5,7 @@ section .text
 isspace:
 	; (int c)rdi
 
-	xor rax, rax ; rax = 0
+	xor eax, eax ; eax = 0
 
 	cmp rdi, 9
 	jl .end ; if (rdi < '\t') goto .end
@@ -17,9 +17,9 @@ isspace:
 	jne .end ; if (rdi != ' ') goto .end
 
 .end_true:
-	inc rax ; rax++
+	inc eax ; eax++
 .end:
-	ret
+	ret ; return eax
 
 
 ; int invalid_base(int c)
@@ -27,8 +27,8 @@ invalid_base:
 	; (int c)rdi
 
 	call isspace
-	test rax, rax
-	jnz .end ; if (rax != 0) goto .end
+	test al, al
+	jnz .end ; if (al != 0) goto .end
 
 	cmp rdi, 43
 	je .end_true ; if (rdi == '+') goto .end_true
@@ -37,9 +37,9 @@ invalid_base:
 	jne .end ; if (rdi == '-') goto .end
 
 .end_true:
-	mov rax, 1
+	inc eax ; eax++
 .end:
-	ret
+	ret ; return eax
 
 
 ; ssize_t find(char v, const char *s)
