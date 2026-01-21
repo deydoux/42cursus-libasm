@@ -9,7 +9,7 @@ SRC_DIR = src
 
 TEST_NAMES = \
 	atoi_base \
-	lst \
+	list \
 	read \
 	strcmp \
 	strcpy \
