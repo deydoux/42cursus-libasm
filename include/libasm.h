@@ -11,6 +11,7 @@ typedef struct s_list {
 char *ft_strcpy(char *dest, const char *src);
 char *ft_strdup(const char *s);
 int ft_atoi_base(char *str, char *base);
+int ft_list_size(t_list *begin_list);
 int ft_strcmp(const char *s1, const char *s2);
 size_t ft_strlen(const char *s);
 ssize_t ft_read(int fd, void *buf, size_t count);

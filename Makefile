@@ -8,6 +8,7 @@ TEST_DIR = test
 SRCS = \
 	ft_atoi_base_bonus.s \
 	ft_list_push_front_bonus.s \
+	ft_list_size_bonus.s \
 	ft_read.s \
 	ft_strcmp.s \
 	ft_strcpy.s \
