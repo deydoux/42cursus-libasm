@@ -26,20 +26,20 @@ ft_list_sort:
 
 	mov rsi, [rbx] ; rsi = rbx->data
 
-	push rdi ; (void *)data
-	push rsi ; (void *)data
 	push rax ; stack align
-	push rbx ; (t_list *current)
-	push rcx ; (int (*cmp)())
-	push rdx ; (t_list *begin_list)
+	push rbx ; t_list *current
+	push rcx ; int (*cmp)()
+	push rdx ; t_list *begin_list
+	push rdi ; void *data
+	push rsi ; void *data
 	call rcx ; eax = cmp(rdi, rsi)
 	mov r8d, eax ; r8d = eax
-	pop rdx ; (t_list *begin_list)
-	pop rcx ; (int (*cmp)())
-	pop rbx ; (t_list *current)
+	pop rsi ; void *data
+	pop rdi ; void *data
+	pop rdx ; t_list *begin_list
+	pop rcx ; int (*cmp)()
+	pop rbx ; t_list *current
 	pop rax ; stack align
-	pop rsi ; (void *)data
-	pop rdi ; (void *)data
 
 	cmp r8d, 0
 	jle .sort_loop ; if (r8d <= 0) goto .sort_loop
