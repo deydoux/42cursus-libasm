@@ -1,18 +1,5 @@
-extern ft_write
-
 section .text
 	global ft_list_sort
-
-; void swap(void *a, void *b)
-swap:
-	; (void *a)rdi
-	; (void *b)rsi
-
-	xor rdi, rsi ; rdi ^= rsi
-	xor rsi, rdi ; rsi ^= rdi
-	xor rdi, rsi ; rdi ^= rsi
-
-	ret ; return
 
 ; void ft_list_sort(t_list **begin_list, int (*cmp)());
 ft_list_sort:
@@ -29,7 +16,7 @@ ft_list_sort:
 	test rdx, rdx
 	jz .end ; if (rdx == 0) goto .end
 
-	mov rdi, [rdx] ; rdi = rdx->data // min
+	mov rdi, [rdx] ; rdi = rdx->data
 	mov rbx, rdx ; rbx = rdx
 
 .sort_loop:
@@ -57,9 +44,10 @@ ft_list_sort:
 	cmp r8d, 0
 	jle .sort_loop ; if (r8d <= 0) goto .sort_loop
 
-	call swap ; swap(rdi, rsi)
-	mov [rdx], rdi ; rdx->data = rdi
-	mov [rbx], rsi ; rbx->data = rsi
+.swap:
+	mov [rdx], rsi ; rdx->data = rsi
+	mov [rbx], rdi ; rbx->data = rdi
+	mov rdi, rsi ; rdi = rsi
 	jmp .sort_loop ; goto .sort_loop
 
 .end:
