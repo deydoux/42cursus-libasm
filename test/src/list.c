@@ -23,6 +23,16 @@ void print_list_push_front(t_list **list, char *data)
 	printf("ft_list_push_front(list, \"%s\")\n", data);
 }
 
+int is_even(const char *s1)
+{
+	return s1[0] % 2 == 0;
+}
+
+int ret_one(void)
+{
+	return 1;
+}
+
 int main(void)
 {
 	t_list *list = NULL;
@@ -62,8 +72,17 @@ int main(void)
 	test_list_size(list, 12);
 
 	putchar('\n');
+	printf("ft_list_sort(&list, ft_strcmp)\n");
 	ft_list_sort(&list, ft_strcmp);
 	print_list(list);
 
-	return (0);
+	putchar('\n');
+	printf("ft_list_remove_if(&list, NULL, is_even, free)\n");
+	ft_list_remove_if(&list, NULL, is_even, free);
+	print_list(list);
+
+	putchar('\n');
+	printf("ft_list_remove_if(&list, NULL, ret_one, free)\n");
+	ft_list_remove_if(&list, NULL, ret_one, free);
+	print_list(list);
 }
