@@ -120,7 +120,6 @@ ft_list_remove_if:
 	mov rdi, r8 ; rdi = r8
 	mov rax, [r8 + 8] ; rax = r8->next
 	mov [rbx + 8], rax ; rbx->next = rax
-	mov rbx, rax ; rbx = rax
 
 	push rbx ; t_list **begin_list
 	push rcx ; void (*free_fct)(void *)
@@ -137,7 +136,7 @@ ft_list_remove_if:
 	pop rbx ; t_list **begin_list
 
 	test rbx, rbx
-	jnz .init_loop ; if (rbx != 0) goto .init_loop
+	jnz .loop ; if (rbx != 0) goto .loop
 
 .end:
 	ret ; return
