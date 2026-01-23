@@ -4,7 +4,7 @@ section .text
 ; int strcmp(const char *s1, const char *s2);
 ft_strcmp:
 	; (const char *s1)rdi
-	; (const char *s1)rsi
+	; (const char *s2)rsi
 
 	jmp .init_loop ; goto .init_loop
 
@@ -14,7 +14,7 @@ ft_strcmp:
 .init_loop:
 	mov al, byte [rdi] ; al = *rdi
 	mov bl, byte [rsi] ; bl = *rsi
-	sub al, bl ; eax -= ebx
+	sub al, bl ; al -= bl
 
 	test al, al
 	jnz .end ; if (al != 0) goto .end

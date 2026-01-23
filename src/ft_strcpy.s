@@ -4,7 +4,7 @@ section .text
 ; char *ft_strcpy(char *dest, const char *src);
 ft_strcpy:
 	; (const char *dest)rdi
-	; (const char *dest)rsi
+	; (const char *src)rsi
 
 	mov rax, rdi ; rax = rdi
 	jmp .init_loop ; goto .init_loop
