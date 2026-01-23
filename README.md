@@ -11,7 +11,7 @@ This project introduces x86-64 assembly language programming by reimplementing s
 - Write assembly code in 64-bit architecture
 - Use Intel syntax
 - Compile with NASM
-- [Implementation](#implementation) of standard C library functions
+- Implementation of standard C library functions
 
 ### Skills Learned
 - Understanding of low-level programming and CPU architecture
@@ -23,37 +23,37 @@ This project introduces x86-64 assembly language programming by reimplementing s
 ## Implementation
 ### Mandatory functions
 
-#### ft_strlen · *[man](https://man7.org/linux/man-pages/man3/strlen.3.html)*
+#### ft_strlen · *[(man 3)](https://man7.org/linux/man-pages/man3/strlen.3.html)*
 Returns the **length** of the string `s`.
 ```c
 size_t ft_strlen(const char *s);
 ```
 
-#### ft_strcpy · *[man](https://man7.org/linux/man-pages/man3/strcpy.3.html)*
-**Copies** the string from `src` to `dst`. Returns a pointer to `dst`.
+#### ft_strcpy · *[(man 3)](https://man7.org/linux/man-pages/man3/strcpy.3.html)*
+**Copies** the string from `src` to `dest`. Returns a pointer to `dest`.
 ```c
-char *ft_strcpy(char *dst, const char *src);
+char *ft_strcpy(char *dest, const char *src);
 ```
 
-#### ft_strcmp · *[man](https://man7.org/linux/man-pages/man3/strcmp.3.html)*
+#### ft_strcmp · *[(man 3)](https://man7.org/linux/man-pages/man3/strcmp.3.html)*
 **Compares** two strings `s1` and `s2`.
 ```c
 int ft_strcmp(const char *s1, const char *s2);
 ```
 
-#### ft_write · *[man](https://man7.org/linux/man-pages/man2/write.2.html)*
+#### ft_write · *[(man 2)](https://man7.org/linux/man-pages/man2/write.2.html)*
 **Writes** `count` bytes from the buffer `buf` to the file descriptor `fd`. On error, sets `errno` appropriately.
 ```c
 ssize_t ft_write(int fd, const void *buf, size_t count);
 ```
 
-#### ft_read · *[man](https://man7.org/linux/man-pages/man2/read.2.html)*
+#### ft_read · *[(man 2)](https://man7.org/linux/man-pages/man2/read.2.html)*
 **Reads** `count` bytes from the file descriptor `fd` into the buffer `buf`. On error, sets `errno` appropriately.
 ```c
 ssize_t ft_read(int fd, void *buf, size_t count);
 ```
 
-#### ft_strdup · *[man](https://man7.org/linux/man-pages/man3/strdup.3.html)*
+#### ft_strdup · *[(man 3)](https://man7.org/linux/man-pages/man3/strdup.3.html)*
 **Duplicates** the string `s` by allocating memory using `malloc`. Returns a pointer to the duplicated string.
 ```c
 char *ft_strdup(const char *s);
