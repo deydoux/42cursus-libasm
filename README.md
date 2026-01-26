@@ -98,6 +98,18 @@ void ft_list_sort(t_list **begin_list, int (*cmp)());
 void ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)(), void (*free_fct)(void *));
 ```
 
+## Getting started
+### Build
+```sh
+make
+```
+
+### Run tests
+```sh
+make run
+```
+See more details on [libasm-tester](https://github.com/deydoux/libasm-tester)
+
 ## References
 - [Let's Learn x86-64 Assembly! Part 0 - Setup and First Steps](https://gpfault.net/posts/asm-tut-0.txt.html)
 - [Langage de programmation - Assembleur 80x86 - 8086/8088](https://www.gladir.com/CODER/ASM8086/8086-8088.htm)
