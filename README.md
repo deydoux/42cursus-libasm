@@ -111,6 +111,8 @@ make run
 See more details on [libasm-tester](https://github.com/deydoux/libasm-tester)
 
 ## References
+<img align="right" src="https://github.com/user-attachments/assets/c8b270f1-68da-4914-8573-b09021dbd688" />
+
 - [Let's Learn x86-64 Assembly! Part 0 - Setup and First Steps](https://gpfault.net/posts/asm-tut-0.txt.html)
 - [Langage de programmation - Assembleur 80x86 - 8086/8088](https://www.gladir.com/CODER/ASM8086/8086-8088.htm)
 - [Linux System Call Table for x86 64 · Ryan A. Chapman](https://blog.rchapman.org/posts/Linux_System_Call_Table_for_x86_64/)
