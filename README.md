@@ -68,7 +68,7 @@ typedef struct s_list {
 } t_list;
 ```
 
-#### ft_atoi_base
+#### ft_atoi_base · *[(man 3)](https://man7.org/linux/man-pages/man3/atoi.3.html)*
 **Converts** a string `str` to an integer using the specified `base`. Handles leading whitespace, optional sign, and validates the base format.
 ```c
 int ft_atoi_base(const char *str, const char *base);
